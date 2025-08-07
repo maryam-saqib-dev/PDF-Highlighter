@@ -1,0 +1,1456 @@
+--- PARSED CHUNKS FROM: llm_for_prov.pdf (Layout-Aware OCR) ---
+
+Fei Zuo
+fzuo@uco.edu
+University of Central Oklahoma
+Edmond, Oklahoma, USA
+
+stract
+
+anced Persistent Threats (APTs) have caused significant losses
+ss a wide range of sectors, including the theft of sensitive
+and harm to system integrity. As attack techniques grow in-
+singly sophisticated and stealthy, the arms race between cyber
+nders and attackers continues to intensify. The revolutionary
+ict of Large Language Models (LLMs) has opened up numer-
+opportunities in various fields, including cybersecurity. An
+guing question arises: can the extensive knowledge embedded
+Ms be harnessed for provenance analysis and play a positive
+in identifying previously unknown malicious events? To seek
+eper understanding of this issue, we propose a new strategy
+aking advantage of LLMs in provenance-based threat detec-
+In our design, the state-of-the-art LLM offers additional details
+‘ovenance data interpretation, leveraging their knowledge of
+2m calls, software identity, and high-level understanding of
+ication execution context. The advanced contextualized embed-
+
+Junghwan Rhee
+jrhee2@uco.edu
+University of Central Oklahoma
+Edmond, Oklahoma, USA
+
+Yung Ryn Choe
+yrchoe@sandia.gov
+Sandia National Laboratories
+Livermore, California, USA
+
+==================== CHUNK SEPARATOR ====================
+
+Yung Ryn Choe
+yrchoe@sandia.gov
+Sandia National Laboratories
+Livermore, California, USA
+
+Among the emerging technologies for robust APT detection, sys-
+tem provenance analysis is being considered as a promising mecha-
+nism, thus attracting widespread attention. As cyber threats become
+more complex and frequent, traditional approaches to threat de-
+tection and response are proving inadequate. Therefore, we also
+notice that leveraging the progress in AI to assist and automate
+system provenance analysis has become more of a need than an
+option. Industry statistics show that in practical incident response
+applications, fully deployed Al-driven systems “were able to identify
+and contain a breach 28 days faster than those that didn’t, saving
+USD 3.05 million in costs” for the organizations [26]. The recent
+survey [5] indicates that “70% of cybersecurity professionals believe
+Al is highly effective in detecting previously undetectable threats”.
+Additionally, 73% of cybersecurity teams want to shift their focus
+to an Al-powered preventive strategy.
+
+ 
+
+The text editor vim performed a read operation to
+access the system file /etc/localtime, which is
+tvpicallv used to retrieve timezone configuration
+
+stract
+
+==================== CHUNK SEPARATOR ====================
+
+vanced Persistent Threats (APTs) have caused significant losses
+oss a wide range of sectors, including the theft of sensitive
+a and harm to system integrity. As attack techniques grow in-
+isingly sophisticated and stealthy, the arms race between cyber
+enders and attackers continues to intensify. The revolutionary
+yact of Large Language Models (LLMs) has opened up numer-
+opportunities in various fields, including cybersecurity. An
+iguing question arises: can the extensive knowledge embedded
+/LMs be harnessed for provenance analysis and play a positive
+- in identifying previously unknown malicious events? To seek
+2eper understanding of this issue, we propose a new strategy
+taking advantage of LLMs in provenance-based threat detec-
+1. In our design, the state-of-the-art LLM offers additional details
+yrovenancce data interpretation, leveraging their knowledge of
+
+W Tr +1°347 1 7 .
+
+==================== CHUNK SEPARATOR ====================
+
+W Tr +1°347 1 7 .
+
+Among the emerging technologies for robust APT detection, sys-
+tem provenance analysis is being considered as a promising mecha-
+nism, thus attracting widespread attention. As cyber threats become
+more complex and frequent, traditional approaches to threat de-
+tection and response are proving inadequate. Therefore, we also
+notice that leveraging the progress in AI to assist and automate
+system provenance analysis has become more of a need than an
+option. Industry statistics show that in practical incident response
+applications, fully deployed Al-driven systems “were able to identify
+and contain a breach 28 days faster than those that didn’t, saving
+USD 3.05 million in costs” for the organizations [26]. The recent
+survey [5] indicates that “70% of cybersecurity professionals believe
+Al is highly effective in detecting previously undetectable threats”.
+Additionally, 73% of cybersecurity teams want to shift their focus
+
+to an Al-powered preventive strategy.
+T 1
+
+ 
+
+Knowledge Transfer from LLMs to Provenance Analysis:
+A Semantic-Augmented Method for APT Detection
+
+Fei Zuo
+fzuo@uco.edu
+University of Central Oklahoma
+Edmond, Oklahoma, USA
+
+tract
+
+==================== CHUNK SEPARATOR ====================
+
+Fei Zuo
+fzuo@uco.edu
+University of Central Oklahoma
+Edmond, Oklahoma, USA
+
+tract
+
+inced Persistent Threats (APTs) have caused significant losses
+ss a wide range of sectors, including the theft of sensitive
+and harm to system integrity. As attack techniques grow in-
+ingly sophisticated and stealthy, the arms race between cyber
+iders and attackers continues to intensify. The revolutionary
+ct of Large Language Models (LLMs) has opened up numer-
+opportunities in various fields, including cybersecurity. An
+suing question arises: can the extensive knowledge embedded
+‘Ms be harnessed for provenance analysis and play a positive
+in identifying previously unknown malicious events? To seek
+»per understanding of this issue, we propose a new strategy
+aking advantage of LLMs in provenance-based threat detec-
+In our design, the state-of-the-art LLM offers additional details
+ovenance data interpretation, leveraging their knowledge of
+m calls, software identity, and high-level understanding of
+cation execution context. The advanced contextualized embed-
+capability is further utilized to capture the rich semantics of
+t descriptions. We comprehensively examine the quality of the
+ting embeddings, and it turns out that they offer promising
+ues. Subsequently, machine learning models built upon these
+»ddings demonstrated outstanding performance on real-world
+In our evaluation, supervised threat detection achieves a pre-
+n of 99.0%, and semi-supervised anomaly detection attains a
+sion of 96.9%.
+
+==================== CHUNK SEPARATOR ====================
+
+5 Concepts
+
+urity and privacy — Intrusion detection systems; »Com-
+ng methodologies — Machine learning.
+
+rwords
+
+ision Detection, APT Detection, Provenance Analysis, GPT,
+e Language Models
+
+Introduction
+
+nontrwanre adxanrad narcictant thrante (ADT e\ tarcatina bat
+
+Junghwan Rhee
+jrhee2@uco.edu
+University of Central Oklahoma
+Edmond, Oklahoma, USA
+
+Yung Ryn Choe
+yrchoe@sandia.gov
+Sandia National Laboratories
+Livermore, California, USA
+
+Among the emerging technologies for robust APT detection, sys
+tem provenance analysis is being considered as a promising mecha
+nism, thus attracting widespread attention. As cyber threats becom:
+more complex and frequent, traditional approaches to threat de
+tection and response are proving inadequate. Therefore, we als«
+notice that leveraging the progress in AI to assist and automat
+system provenance analysis has become more of a need than ar
+option. Industry statistics show that in practical incident response
+applications, fully deployed Al-driven systems “were able to identif:
+and contain a breach 28 days faster than those that didn’t, savin;
+USD 3.05 million in costs” for the organizations [26]. The recen
+survey [5] indicates that “70% of cybersecurity professionals believ
+Al is highly effective in detecting previously undetectable threats’
+Additionally, 73% of cybersecurity teams want to shift their focu:
+to an Al-powered preventive strategy.
+
+==================== CHUNK SEPARATOR ====================
+
+The text editor vim performed a read operation to
+access the system file /etc/localtime, which is
+typically used to retrieve timezone configuration
+information.
+
+ 
+
+ 
+
+ 
+
+Listing 1: The explanation of a system event (expressed usins
+a triplet “vim read /etc/localtime”) provided by GPT-4.
+
+Existing Al-powered threat detection techniques have either ap
+proached provenance analysis from a graph perspective or from <
+natural language perspective [2, 29]. In this work, we follow th:
+latter approach, considering the system entities and the interactio1
+between them as various components of a sentence. But unlike pre
+vious work, we will take advantage of the recent advancements ir
+large language models (LLMs) to enhance provenance analysis. Thi
+approach offers several obvious benefits. First of all, the extensive
+knowledge possessed by LLMs can be leveraged to augmen
+the semantics of system event descriptions. For example, giver
+a simple system event described by the triplet “vim read /etc/lo
+caltime”, the descriptive text generated by GPT-4 through beings
+guided by appropriate prompt engineering is shown in Listing |
+Compared to the original input triplet, GPT-4 accurately supple
+mented the information that “vim is a text editor”. Moreover, basex
+
+an thao pharacrtarictire anf tha carnnd axvrctam antityv jt infarrod tha
+
+JLLELOU DY LLdVis, olililidl Laohs WUULU LY PICdlly LOQUILE sip iiiiicalltl
+vuman effort and expertise. More examples will be provided later
+n Section 3.3.
+
+==================== CHUNK SEPARATOR ====================
+
+It is worth noting that the descriptive texts used to interpret
+system events are unstructured data. Therefore, to facilitate sub-
+sequent learning by artificial intelligence models, we also need to
+ise appropriate embedding models to learn numerical representa-
+ions of data. This highlights another benefit of introducing LLMs:
+heir powerful embedding models can accurately capture
+ind retain more semantic information. In the natural language
+yrocessing domain, different embedding techniques have been pro-
+yosed for words [19], sentences [23], and documents [12]. The prior
+work [29] used Doc2Vec [12] to generate embeddings for a series
+»f selected system events. However, when using traditional models
+ike Word2Vec [19] or Doc2Vec [12], the out-of-vocabulary (OOV)
+ssue will be an unavoidable challenge. For provenance analysis in
+he wild, it is unrealistic to exhaustively collect words such as file
+1ames or executable paths. A usual approach is to ignore words that
+iave never appeared in the vocabulary when generating numerical
+‘epresentations of sentences. However, this leads to information
+oss. In our proposed method, we offer two targeted solutions. First,
+or system entities with indicators that have special significance,
+ve make full use of the extensive knowledge of LLMs to interpret
+
+facilitate future related studies.
+
+==================== CHUNK SEPARATOR ====================
+
+facilitate future related studies.
+
+The remainder of this paper is organized as follows: First, to
+help readers better understand this article, we briefly introduce
+the necessary preliminary knowledge in Section 2. Next, Section 3
+describes our system architecture and design in detail. Then, we
+conduct evaluations and show the results in Section 4. The related
+work is then reviewed in Section 5. The limitations of this work
+and potential future directions are discussed in Section 6. Finally,
+we draw conclusions in Section 7.
+
+2 Background
+
+In this section, we briefly introduce the necessary background on
+system-level provenance analysis and large language models.
+
+2.1 Provenance Data
+
+Provenance data records complex dependencies across various sys-
+tem events, thus reflecting the interactions between entities within
+a historical context. System-level provenance is usually presented
+in the form of graphs, where each node represents a system entity
+(e.g., a process or a file); edges are system call and timestamp labels
+related to the nodes. A system call is the programmatic way in
+which a user app can request a service from an OS kernel.
+
+Figure 2: System overview.
+
+yvenance data are regarded as informative features for describing
+yber incident in intrusion detection.
+
+2 Large Language Models
+
+==================== CHUNK SEPARATOR ====================
+
+yvenance data are regarded as informative features for describing
+yber incident in intrusion detection.
+
+2 Large Language Models
+
+recent years, the emergence of large language models (LLMs)
+indoubtedly one of the most impactful breakthroughs of AI. A
+ge language model, as the name suggests, is a language model
+ined on massive amounts of text data and has billions of param-
+rs. As a widely recognized instance of an LLM, the Generative
+>-trained Transformer (GPT) has attracted widespread attention
+rldwide since its emergence in 2018 [25]. As an implementation
+GPT, OpenAI launched ChatGPT! to the public in 2022, which
+monstrates a powerful ability to generate human-like responses
+conversational interactions. Microsoft’s Copilot? is another rep-
+entative commercial product of generative AI, which adopts
+T as the core model. Another main competitor in the same field,
+mini? was launched by Google in December 2023.
+
+In this work, we chose GPT as our primary LLM because OpenAI
+
+a alan vnlanacnd a nanvvnannndineg ADT Law acvrtornal ywenean tr annana
+
+in different contexts. For example, the word “mouse” can refer to
+either a computer hardware or an animal, but regardless of the
+context, it only has one vector representation. In contrast, contex-
+tualized embeddings generate dynamic, context-dependent vector
+representations for text, meaning that the representation changes
+depending on the surrounding context.
+
+==================== CHUNK SEPARATOR ====================
+
+The strength of analogical reasoning ability is an important
+indicator of whether text embeddings are meaningful. An analogical
+question typically consists of two pairs of texts, such as (“man”,
+“king”) and (“woman”, “queen”). To assess how related the two
+pairs are, the analogy “man is to king as woman is to queen” is
+formed, and its validity is tested. In the feature space, the analogical
+question can be represented as |E; — E2| ~ |E3 — E4|, where EF}, E2,
+E3, and Eq are the embedding vectors, and | - | represents the norm.
+This means that the two pairs of texts being examined can form an
+approximately parallelogram-like relationship in the feature space.
+Applying this concept to our problem, we can find similar analogies
+between one pair of system event descriptions and others. If these
+analogies alion with our prior knowledge exnected in nrovenance
+
+System events |
+
+ 
+
+@ Explanatory texts
+generation
+
+@ Pre-processing
+
+x x Vv Benign
+S— @<—
+
+X Adversary
+
+@ PCA ©) Threat detection
+
+Figure 2: System overview.
+
+enance data are regarded as informative features for describing
+yer incident in intrusion detection.
+
+Large Language Models
+
+==================== CHUNK SEPARATOR ====================
+
+enance data are regarded as informative features for describing
+yer incident in intrusion detection.
+
+Large Language Models
+
+cent years, the emergence of large language models (LLMs)
+doubtedly one of the most impactful breakthroughs of AL A
+- language model, as the name suggests, is a language model
+ed on massive amounts of text data and has billions of param-
+. As a widely recognized instance of an LLM, the Generative
+rained Transformer (GPT) has attracted widespread attention
+dwide since its emergence in 2018 [25]. As an implementation
+PT, OpenAl launched ChatGPT! to the public in 2022, which
+onstrates a powerful ability to generate human-like responses
+nversational interactions. Microsoft’s Copilot? is another rep-
+itative commercial product of generative AI, which adopts
+as the core model. Another main competitor in the same field,
+ini? was launched by Google in December 2023.
+
+==================== CHUNK SEPARATOR ====================
+
+this work, we chose GPT as our primary LLM because OpenAI
+ilso released a corresponding API for external users to access
+dvanced LLMs developed by OpenAI. Applying the API offered
+penAl in applications has three main benefits. First, developers
+lowed to interact with a vast knowledge base provided by
+1Al’s state-of-the-art AI models in a programmatical manner.
+nd, it provides a straightforward way to leverage the cutting-
+capabilities in NLP, thus enabling tasks like text generation,
+pretation, and summarization. Lastly, other functionalities pro-
+1 by OpenAI, such as fine-tuning, facilitate users to optimize
+-application’s performance on customized tasks.
+
+Unstructured Data Embeddings
+
+enance data is recorded in an unstructured form, such as file
+2s or executable paths, which are textual in nature. To facilitate
+equent machine learning tasks, embedding methods are re-
+-d to learn the numerical representations for the unstructured
+Multiple embedding techniques have been proposed in the
+of natural language processing. In some previous security-
+ed applications [37, 38], the practice of embedding text has
+ed a crucial role. Currently, mainstream embedding methods
+ye categorized into two main types: static embeddings and con-
+
+talizvad ambhaddinge Whan wucing ctatir ambhaddinac the cama
+
+==================== CHUNK SEPARATOR ====================
+
+talizvad ambhaddinge Whan wucing ctatir ambhaddinac the cama
+
+in different contexts. For example, the word “mouse” can refer t
+either a computer hardware or an animal, but regardless of th
+context, it only has one vector representation. In contrast, contex
+tualized embeddings generate dynamic, context-dependent vecto
+representations for text, meaning that the representation change:
+depending on the surrounding context.
+
+The strength of analogical reasoning ability is an importan
+indicator of whether text embeddings are meaningful. An analogica
+question typically consists of two pairs of texts, such as (“man
+“king”) and (“woman’, “queen”). To assess how related the tw«
+pairs are, the analogy “man is to king as woman is to queen” i:
+formed, and its validity is tested. In the feature space, the analogica
+question can be represented as |E, — E2| ~ |E3 — E4|, where £1, E;
+E3, and E4 are the embedding vectors, and | - | represents the norn
+This means that the two pairs of texts being examined can form a1
+approximately parallelogram-like relationship in the feature space
+Applying this concept to our problem, we can find similar analogie
+between one pair of system event descriptions and others. If thes
+analogies align with our prior knowledge expected in provenanc
+analysis, we can confirm that the embeddings generated by LLM:
+are semantically meaningful.
+
+3 Methodology
+
+==================== CHUNK SEPARATOR ====================
+
+3 Methodology
+
+In this study, we employ OpenAI API to access and integrate thi
+capabilities of GPT-40 into our applications. GPT-40 is a state-of
+the-art multimodal LLM created by OpenAI, which has been traine<
+on data up to October 2023, ensuring its responses are informed b:
+the most recent and relevant information available. Through th:
+API, we can automatically interact with GPT-40 to perform variou
+tasks, such as generating text in batches.
+
+Figure 2 illustrates the overall pipeline of our system. Given th
+provenance system data, we first pre-process the raw data accordin;
+to the specific characteristics of different types of system event:
+Second, using the LLM service, explanatory texts with augmente:
+semantics for system events are generated with proper promp
+engineering. Third, the text embeddings are further produced by
+taking advantage of the facilities of the LLM. Next, we employ
+some manifold learning method such as Kernel PCA to adjust th
+dimensionality of the original embeddings. Lastly, the threat i:
+detected bv a well-trained machine-learnine model.
+
+ystem call arguments are included because they include specific
+iformation about what program is executed. This information is
+ssential for interpreter programs such as Python and Bash because
+1e main program names do not show the script names. For network
+vents, network type (IPv4), client IP, server IP, and server port are
+sed. These fields are provided as a JSON object to the LLM service.
+
+==================== CHUNK SEPARATOR ====================
+
+Path normalization: Using the raw data sometimes could cre-
+te unnecessary noise to the LLM as seen in the randomly generated
+ata or timestamps. Therefore, we applied several data normaliza-
+on methods to avoid such noise. First, temporary files tend to have
+‘ss meaningful names due to their nature. We utilized several well-
+nown file extensions for the temporary files such as “tmp” and
+temp” to generalize their names. Second, the files under certain
+irectories such as the proc file system can be noisy because they
+-flect the internal states of the operating system kernel and their
+le paths may include the process IDs (PIDs) which are dynam-
+ally determined. Therefore, such file names are generalized by
+xcluding the PIDs. Lastly, if file names are like hashes based on
+nown patterns (e.g., MD5 and SHA), their names are normalized
+sing a uniform pattern “hash value”.
+
+.2 Explanatory texts generation
+
+“
+
+whose shell is /bin/bash.
+
+Given these input data, the OpenAI gpt-40 LLM service re-
+sponded with the following answer: “This event is an execve type,
+indicating the execution of a new program. The process involved is
+crond, which is a daemon used to execute scheduled commands. The
+event was initiated by the root user, utilizing the /bin/bash shell.
+The specific command executed is sh, which suggests the initiation of
+a Shell session or script execution. This activity is typical for system
+maintenance or scheduled tasks managed by the cron service.”
+
+==================== CHUNK SEPARATOR ====================
+
+This text explanation of a system event is used as an input for
+the text embedding explained next.
+
+3.3 Notable Details in LLM Explanations
+
+During our exploration of LLM explanations of system call events,
+we identified that there are multiple notable details that are ben-
+eficial for understanding the events, especially for cybersecurity
+purposes. We list several concrete examples as demonstrations.
+(1) Knowledge of System Calls: First, in LLM’s explanation,
+a simple system call name is expanded to a full sentence of
+what it indicates by explaining what is the system call for.
+(blue annotation)
+(2) Knowledge of Software Identity: Second, For commonly
+
+h is likely the DHCP server, using the source port 67, of this system call changing the memory protection of a r
+
+tandard port for DHCP server communications. The of memory. We found a more useful description is about I
+nation IP address is IP2, which appears to be a broadcast comment on this event’s usage. LLM mentions this event
+
+2ss. The process is running under the user root with the be part of a legitimate operation or potentially suspicious gi
+/bin/bash. This event suggests that the DHCP client is web-service user with a restricted shell. Indeed, this echo pr
+ving network configuration information from the DHCP was caused by a security exploit from a malicious behavior d:
+
+rr. and LLM correctly identified its potential risk.
+
+==================== CHUNK SEPARATOR ====================
+
+rr. and LLM correctly identified its potential risk.
+
+ 
+
+‘stination IP address is IP2, which appears to be a broadcast
+dress. The process is running under the user root with the
+ell /bin/bash. This event suggests that the DHCP client is
+ceiving network configuration information from the DHCP
+rver.
+
+ 
+
+anual Evaluation: The first example is about a dhclient pro-
+performing a recvfrom system call event. LLM first explains
+lentity of this software correctly as a DHCP client annotated
+violet color. It adds the explanation of what this system call
+ates (blue annotation). Then the LLM explains a high-level
+cation context of this event as the DHCP client receiving net-
+configuration information from the DHCP server (yellow
+tation).
+
+ven the system event “screen openat ubuntu /bin/bash
+IME", Example 2 shows the corresponding explanatory text
+rated by the LLM.
+
+ 
+
+cample 2 }
+1is event is an openat system call where the process named
+
+ME . The action is performed by a user named ubuntu who
+operating within a Bash shell environment. This type of
+ent typically indicates a process accessing or modifying
+cale settings related to time, possibly for configuring or
+trieving time-related information.
+
+ 
+
+  
+ 
+
+ 
+
+anual Evaluation: The second example is about the openat
+m call event made by the screen software. LLM explains that
+system call is regarding opening a file or directory correctly
+annotation). Then it adds a high-level description that it is typ-
+
+==================== CHUNK SEPARATOR ====================
+
+comment on this event’s usage. LLM mentions this event could
+be part of a legitimate operation or potentially suspicious given a
+web-service user with a restricted shell. Indeed, this echo process
+was caused by a security exploit from a malicious behavior dataset
+and LLM correctly identified its potential risk.
+
+3.4 Embeddings and Dimension Adjustment
+
+As we mentioned earlier, ProvDetector [29] uses Doc2Vec [12]
+to embed the descriptive text of system events. Doc2Vec [12] isa
+static embedding method that learns paragraph embeddings via
+the distributed memory and distributed bag of words models. In
+contrast, OpenAI has launched two powerful embedding models
+since January 2024, namely text-embedding-3-small and text-
+embedding-3-large [22]. In particular, they use the state-of-the-
+art contextualized embeddings method, which is considered as an
+augmentation to static embeddings.
+
+==================== CHUNK SEPARATOR ====================
+
+Static embeddings assign a single and fixed representation to
+each word, regardless of its context. However, contextualized em-
+beddings generate more accurate and flexible representations by
+considering the context in which words appear, thus providing
+fine-grained semantics understanding and more nuanced represen-
+tations. In the NLP domain, contextualized embeddings have led to
+substantial performance gains on a variety of tasks compared to
+static embeddings. The embedding models of OpenAI enable us to
+generate numerical sequences that accurately capture the seman-
+tics of natural language, laying a solid foundation for subsequent
+machine learning tasks.
+
+OpenAl’s embedding models can output feature vectors with
+dimensions as high as 1,536 or 3,072. Generally, higher-dimensional
+feature vectors can represent more detailed and complex informa-
+tion. However, high-dimensional feature vectors also pose chal-
+
+conduct empirical studies based on a publicly available dataset
+»vSec [27]. This dataset collects provenance analysis data from
+ven attack scenarios in the real world. Information about these
+ven attacks is summarized in Table 1. When an attack is launched,
+‘corresponding events are recorded and preliminarily regarded
+adversarial. Otherwise, if the attack has not been launched, the
+nts extracted from the corresponding provenance data are re-
+ded as benign. A self-evident intuition is that adversary attacks
+
+usually hidden among massive normal events. Therefore, it is
+
+==================== CHUNK SEPARATOR ====================
+
+usually hidden among massive normal events. Therefore, it is
+
+4.3 Analysis of Embedding Quality
+
+4.3.1 Embedding Visualization. In this section, we first cor
+Doc2Vec [12] with GPT-4o0 in terms of the interpretability of
+embeddings. The former method was used in a prior res
+ProvDetector [29]. To keep balance, for benign and adve
+events, we randomly selected 500 samples from each. Afte:
+we project the event embeddings to a two-dimensional space
+t-SNE [28]. The result is shown in Figure 3, where blue points
+sent benign samples while red ones represent adversarial sai
+
+#08 Django CVE-2021-35042
+#09 Apache CVE-2021-42013
+#10 Apache CVE-2021-41773
+
+Django allows QuerySet.order_by SQL injection vulnerability
+Path traversal and file disclosure vulnerability in HTTP server
+Apache web server path traversal and file disclosure vulnerability
+
+#11 Java Log4j CVE-2021-44228
+
+tilayer perceptron (MLP), which is a neural network model. The
+ond detector is gradient-boosted decision trees (GBDT), which is
+presentative ensemble learning model. For the semi-supervised
+ning, we train an anomaly detector using XGBOD [35] algorithm.
+s is more aligned with real-world application scenarios, where
+y labeled data is hard to obtain, and artificial intelligence appli-
+ons are built based on a combination of labeled and unlabeled
+1.
+
+Evaluation
+
+==================== CHUNK SEPARATOR ====================
+
+Evaluation
+
+ed on the methodology introduced in Section 3, we conduct
+t of experimental studies to evaluate the performance of our
+posed technique. We are particularly interested in exploring the
+rpretability of descriptive tests from GPT-40 regarding system
+nts, as well as the ability of OpenAI’s embedding model to
+ture the semantics of system events. and their effectiveness in
+ctical threat detection. We would also like to further investigate
+sther OpenAl’s extensive knowledge can be practically helpful
+threat detection. Specifically, our evaluation is intended to seek
+
+lg tT OL Tt lg tt OK YY
+
+Log4j vulnerability allows an affected system to be controlled remotely
+
+==================== CHUNK SEPARATOR ====================
+
+lg tT OL Tt lg tt OK YY
+
+Log4j vulnerability allows an affected system to be controlled remotely
+
+unsurprising that there exist some events that may be on both sides.
+The intersection between the benign events and the preliminary
+adversary events is not sufficiently iconic to indicate an attack be-
+havior. To this end, those overlapped patterns from the original
+adversary events should be removed. Please note that, as described
+in Section 3, we extracted slightly different fields to depict different
+types of events. As a result, a total of 4,507 unique adversary events
+remained. Moreover, in reality, the distribution of adversary events
+and normal events is imbalanced, with the majority of events being
+benign. To keep rough balance, we randomly extract 5,000 different
+benign events. In the dataset, 80% of instances are used for training
+and the remaining 20% for testing, denoted as Dr;gin and Dest,
+respectively.
+
+4.2 Environment Settings
+
+When interacting with GPT-40 via the API provided by OpenAl,
+we select “gpt-40” as the LLM. Furthermore, we choose the text-
+embedding-3-smal1 as our text embedding approach, which is the
+newest embedding model released by OpenAI in January 2024. Com-
+
+ 
+
+) Software Vulnerability Description
+
+1 Consul N/A Consul service APIs misconfiguration, RCE and reverse shell
+
+2 Nginx CVE-2017-7529 Web server remote integer overflow vulnerability
+
+3. Ghostscript CVE-2018-16509 Python remote shell command execution via ghostscript
+
+==================== CHUNK SEPARATOR ====================
+
+3. Ghostscript CVE-2018-16509 Python remote shell command execution via ghostscript
+
+4 PHP CVE-2018-19518 PHP IMAP remote command execution (RCE) vulnerability
+
+5 Docker CVE-2019-5736 | Escape from a Docker container: vulnerability on Docker
+
+6 Tomcat CVE-2020-1938 | Apache Tomcat arbitrary file read / include vulnerability
+
+7 Redis CVE-2022-0543  Redis Lua sandbox escape and remote code execution
+
+8 Django CVE-2021-35042 Django allows QuerySet.order_by SQL injection vulnerability
+
+9 Apache CVE-2021-42013 Path traversal and file disclosure vulnerability in HTTP server
+
+@ Apache CVE-2021-41773 Apache web server path traversal and file disclosure vulnerability
+1 JavaLog4j CVE-2021-44228 Log4j vulnerability allows an affected system to be controlled ren
+
+ultilayer perceptron (MLP), which is a neural network model. The
+cond detector is gradient-boosted decision trees (GBDT), which is
+‘epresentative ensemble learning model. For the semi-supervised
+ning, we train an anomaly detector using XGBOD [35] algorithm.
+lis is more aligned with real-world application scenarios, where
+lly labeled data is hard to obtain, and artificial intelligence appli-
+tions are built based on a combination of labeled and unlabeled
+ta.
+
+Evaluation
+
+1 | a 11 eo. 7 ts snweoiee _ 7
+
+==================== CHUNK SEPARATOR ====================
+
+Evaluation
+
+1 | a 11 eo. 7 ts snweoiee _ 7
+
+unsurprising that there exist some events that may be on both sic
+The intersection between the benign events and the prelimin<
+adversary events is not sufficiently iconic to indicate an attack
+havior. To this end, those overlapped patterns from the origi:
+adversary events should be removed. Please note that, as descril
+in Section 3, we extracted slightly different fields to depict differ
+types of events. As a result, a total of 4,507 unique adversary eve
+remained. Moreover, in reality, the distribution of adversary eve
+and normal events is imbalanced, with the majority of events bei
+benign. To keep rough balance, we randomly extract 5,000 differ
+
+hKeanicn avante Tn tha datacat &8NY nf inctanrec ara cad far train;
+
+(a) Embeddings are generated using Doc2Vec (b) Embeddings are generated using GPT of OpenAI
+
+Figure 3: Visualization based on t-SNE of event embeddings. The blue points and red points represent benign events 2
+adversary events respectively.
+
+ 
+
+It can be seen from Figure 3(a) that the majority of malicious httpd openat daemon /usr/sbin/nologin passwd
+events are mixed with benign ones. This is consistent with the
+
+==================== CHUNK SEPARATOR ====================
+
+@ httpd close daemon /usr/sbin/nologin pass
+result presented in the existing paper [29]. To address this challenge,
+previous researchers design a rareness-based selection algorithm httpd openat daemon /usr/sbin/nologin localtime
+to first extract the potentially malicious part from the provenance °
+sraph of a process. However, this method is based on heuristics, httpd close daemon /usr/sbin/nologin localtime
+which consequently relies on human expertise and typically leads °
+
+to a risk of bias.
+
+In contrast, our method leverages the extensive knowledge of
+GPT-40 to enrich the semantics of event descriptions. Therefore, we
+can observe from Figure 3(b) that small cliques formed by similar
+events, although benign and adversarial samples are not trivially
+linear separable. This is because we compress the high-dimensional
+space into a 2-dimensional plane, which leads to information loss.
+The senaratine hvner-nlanes hetween crouns that could oricinallv
+
+ 
+
+docker-containe openat root /bin/bash localtime
+
+ 
+
+ 
+
+ 
+
+Gi GPT @ Pv-DM@ Pv-DM-OooVv
+2 aele p gle 2 gle 9 gle
+
+ 
+
+ 
+
+@ GPT @ Pv-DM@ Pv-DM-ooVv
+ee” ® acto sl gle a acto
+
+   
+
+0.6
+
+0.4
+
+ 
+
+ 
+
+0.2
+
+ 
+
+F1-Score Precision Recall
+
+Accuracy
+
+(a) MLP-based detector
+
+ 
+
+F1-Score Precision Recall
+
+Accuracy
+
+ 
+
+(b) GBDT-based detector
+
+Figure 5: Comparison of different embedding methods for the final threat detection performance.
+
+ttpd close daemon /usr/sbin/nologin passwd”
+
+se to the distance between
+
+==================== CHUNK SEPARATOR ====================
+
+ttpd close daemon /usr/sbin/nologin passwd”
+
+se to the distance between
+
+ttpd openat daemon /usr/sbin/nologin localtime’
+ttpd close daemon /usr/sbin/nologin localtime”
+
+°
+
+arly, the distance between the following two events
+ocker-containe openat root /bin/bash localtime’
+ocker-containe close root /bin/bash localtime”
+se to the distance between
+
+ttpd openat daemon /usr/sbin/nologin localtime’
+ttpd close daemon /usr/sbin/nologin localtime”
+parallelogram relationship in geometry is consistent with
+rior knowledge. We limit the presented examples to eight
+0 space limitation. In our manual investigation, however, we
+nany such semantic analogies that are automatically learned.
+fore, it can be seen that the embeddings demonstrated good
+ability.
+
+°
+
+°
+
+Comparison
+
+is section, we compare the representation learning adopted
+r approach with the embedding method used in the previous
+‘ [29], and examine their impact on the final threat detection.
+concretely, the PV-DM model of Doc2Vec was employed in [29].
+1 using PV-DM to generate embeddings for system events, we
+der two different scenarios. The first scenario assumes that
+ive exhaustively collected as many words as possible for the
+yulary, so there is no out-of-vocabulary (OOV) issue. Surely,
+s difficult to achieve in practice. Therefore, the second, more
+tic scenario is that we only learn an embedding model from
+in- As such, during the testing phase, there may be words that
+never been encountered before.
+
+==================== CHUNK SEPARATOR ====================
+
+should be noted that, to ensure fairness, we use Kernel PCA
+luce the dimensionality of the feature vectors generated by
+from 1,536 to 256. Similarly, the feature vectors generated by
+vec are also kept at the same dimensionality, i-e., 256 dimen-
+
+. As mentioned earlier, for the threat detector, we consider
+a da hee MO Dand Cont Dae
+
+Table 2: Threat Detection Performance
+
+Model Accuracy Precision Recall F,-Score
+
+ 
+
+MLP 99.1% 99.0% 99.0% 99.0%
+GBDT 98.3% 97.2% 99.1% 98.1%
+
+XGBOD 96.1% 96.9% 94.7% 95.8%
+
+search to find the parameters that yield the best accuracy scc
+The experimental results are shown in Figure 5.
+
+As shown in Figure 5, regardless of which machine learni
+model was used as the detector, our proposed method achiey
+significantly better performance compared to the baselines. Wh
+using MLP and GBDT as detectors, the accuracy reaches 99.1% a
+98.3%, respectively. Moreover, when the OOV problem is prese
+the performance of detectors trained on feature vectors genera’
+by Doc2Vec further deteriorates. It is worth noting that the size
+our testing set is relatively small, containing only 1,902 samples.
+real-world scenarios, due to the diversity of unstructured data st
+as file names or executable paths, the OOV problem is likely to
+even more severe. The advantages of large language models wor
+become even more apparent.
+
+4.5 Detection Performance
+
+==================== CHUNK SEPARATOR ====================
+
+4.5 Detection Performance
+
+In the previous section, we have witnessed the classification perf
+mance of two supervised models, i.e., MLP and GBDT. In the sup
+vised learning setting, our method effectively distinguishes adv
+sary events from normal events. Now, we consider a more challe
+ing but also more practical scenario—verifying whether our p
+posed method can still be effective under a semi-supervised learni
+setting. In practice, obtaining a fully labeled dataset is inheren
+challenging and usually expensive. However, semi-supervised lea
+ing uses a combination of labeled and unlabeled data to train art
+cial intelligence (AI) models. Specifically, semi-supervised out]
+detection can be performed even when the training data consi
+
+antler nf nhcaoarmratiana Aaanvihing narrmnalhahauinr Aftarv all tn vaal
+
+ 
+
+ 
+
+ 
+
+  
+
+ 
+
+ 
+
+   
+
+ 
+
+ 
+
+ 
+
+GPT HM PV-DM {J PV-DM-Oov
+gos? os”
+
+ 
+
+@ ve
+
+26 sie
+
+ 
+
+1.2
+
+1.0
+
+0.8
+
+0.6
+
+0.4
+
+0.2
+
+oe
+
+   
+
+ 
+
+ 
+
+ 
+
+AAALIPAR (Ci CQnarn Dranicinn Danaoall
+
+ 
+
+GPT HM PV-DMM PV-DM-OooVv
+gl ee Q-
+
+ 
+
+ 
+
+ 
+
+9 x"
+
+    
+
+     
+
+fi CQnarn Draniaian Danz—aill
+
+ANRnaiipany
+
+ON OI NIDA Sy ODED ILI AIDA IN DIDD LI III Ey III I IND III DIDI NEED I IEA LES
+prior knowledge. We limit the presented examples to eight
+to space limitation. In our manual investigation, however, we
+many such semantic analogies that are automatically learned.
+efore, it can be seen that the embeddings demonstrated good
+icability.
+
+Comparison
+
+==================== CHUNK SEPARATOR ====================
+
+Comparison
+
+is section, we compare the representation learning adopted
+ir approach with the embedding method used in the previous
+1 [29], and examine their impact on the final threat detection.
+> concretely, the PV-DM model of Doc2Vec was employed in [29].
+n using PV-DM to generate embeddings for system events, we
+ider two different scenarios. The first scenario assumes that
+ave exhaustively collected as many words as possible for the
+bulary, so there is no out-of-vocabulary (OOV) issue. Surely,
+is difficult to achieve in practice. Therefore, the second, more
+stic scenario is that we only learn an embedding model from
+ain. As such, during the testing phase, there may be words that
+‘never been encountered before.
+
+should be noted that, to ensure fairness, we use Kernel PCA
+duce the dimensionality of the feature vectors generated by
+from 1,536 to 256. Similarly, the feature vectors generated by
+Vec are also kept at the same dimensionality, i-e., 256 dimen-
+
+==================== CHUNK SEPARATOR ====================
+
+As shown in Figure 5, regardless of which machine learning
+model was used as the detector, our proposed method achieves
+significantly better performance compared to the baselines. When
+using MLP and GBDT as detectors, the accuracy reaches 99.1% and
+98.3%, respectively. Moreover, when the OOV problem is present,
+the performance of detectors trained on feature vectors generated
+by Doc2Vec further deteriorates. It is worth noting that the size of
+our testing set is relatively small, containing only 1,902 samples. In
+real-world scenarios, due to the diversity of unstructured data such
+as file names or executable paths, the OOV problem is likely to be
+even more severe. The advantages of large language models would
+become even more apparent.
+
+4.5 Detection Performance
+
+==================== CHUNK SEPARATOR ====================
+
+4.5 Detection Performance
+
+In the previous section, we have witnessed the classification perfor-
+mance of two supervised models, i.e., MLP and GBDT. In the super-
+vised learning setting, our method effectively distinguishes adver-
+sary events from normal events. Now, we consider a more challeng-
+ing but also more practical scenario—verifying whether our pro-
+posed method can still be effective under a semi-supervised learning
+setting. In practice, obtaining a fully labeled dataset is inherently
+challenging and usually expensive. However, semi-supervised learn-
+ing uses a combination of labeled and unlabeled data to train artifi-
+cial intelligence (AI) models. Specifically, semi-supervised outlier
+
+milarly, the distance between the following two events
+“docker-containe openat root /bin/bash localtime”
+“docker-containe close root /bin/bash localtime”
+close to the distance between
+“httpd openat daemon /usr/sbin/nologin localtime”
+“httpd close daemon /usr/sbin/nologin localtime”
+his parallelogram relationship in geometry is consistent with
+ur prior knowledge. We limit the presented examples to eight
+ue to space limitation. In our manual investigation, however, we
+
+nd many such semantic analogies that are automatically learned.
+
+herefore, it can be seen that the embeddings demonstrated good
+<plicability.
+
+4 Comparison
+
+1 this section, we compare the representation learning adopted
+| our approach with the embedding method used in the previous
+
+==================== CHUNK SEPARATOR ====================
+
+4 Comparison
+
+1 this section, we compare the representation learning adopted
+| our approach with the embedding method used in the previous
+
+aper [29], and examine their impact on the final threat detection.
+lore concretely, the PV-DM model of Doc2Vec was employed in [29].
+
+hen using PV-DM to generate embeddings for system events, we
+ynsider two different scenarios. The first scenario assumes that
+
+Pree FAFeASO FAFMLIO FAMIO FAMLO
+
+GBDT 98.3% 97.2% 99.1% 98.1%
+XGBOD 96.1% 96.9% 94.7% 95.8%
+
+search to find the parameters that yield the best accuracy score.
+The experimental results are shown in Figure 5.
+
+As shown in Figure 5, regardless of which machine learning
+model was used as the detector, our proposed method achieves
+significantly better performance compared to the baselines. When
+using MLP and GBDT as detectors, the accuracy reaches 99.1% and
+98.3%, respectively. Moreover, when the OOV problem is present,
+the performance of detectors trained on feature vectors generated
+by Doc2Vec further deteriorates. It is worth noting that the size of
+our testing set is relatively small, containing only 1,902 samples. In
+real-world scenarios, due to the diversity of unstructured data such
+as file names or executable paths, the OOV problem is likely to be
+even more severe. The advantages of large language models would
+become even more apparent.
+
+4.5 Detection Performance
+
+Accuracy F1-Score Precision Recall
+
+(a) MLP-based detector
+
+Accuracy F1-Score Precision Recall
+
+==================== CHUNK SEPARATOR ====================
+
+4.5 Detection Performance
+
+Accuracy F1-Score Precision Recall
+
+(a) MLP-based detector
+
+Accuracy F1-Score Precision Recall
+
+(b) GBDT-based detector
+
+Figure 5: Comparison of different embedding methods for the final threat detection performance.
+
+‘httpd close daemon /usr/sbin/nologin passwd”
+lose to the distance between
+
+‘httpd openat daemon /usr/sbin/nologin localtime”
+‘httpd close daemon /usr/sbin/nologin localtime”
+
+iilarly, the distance between the following two events
+‘docker-containe openat root /bin/bash localtime”
+‘docker-containe close root /bin/bash localtime”
+lose to the distance between
+
+‘httpd openat daemon /usr/sbin/nologin localtime”
+‘httpd close daemon /usr/sbin/nologin localtime”
+
+is parallelogram relationship in geometry is consistent with
+‘prior knowledge. We limit the presented examples to eight
+> to space limitation. In our manual investigation, however, we
+
+1 many such semantic analogies that are automatically learned.
+
+srefore, it can be seen that the embeddings demonstrated good
+licability.
+
+Table 2: Threat Detection Performance
+
+Model Accuracy Precision Recall F,-Score
+
+ 
+
+MLP 99.1% 99.0% 99.0% 99.0%
+GBDT 98.3% 97.2% 99.1% 98.1%
+
+XGBOD 96.1% 96.9% 94.7% 95.8%
+
+search to find the parameters that yield the best accuracy score.
+The experimental results are shown in Figure 5.
+
+==================== CHUNK SEPARATOR ====================
+
+XGBOD 96.1% 96.9% 94.7% 95.8%
+
+search to find the parameters that yield the best accuracy score.
+The experimental results are shown in Figure 5.
+
+As shown in Figure 5, regardless of which machine learning
+model was used as the detector, our proposed method achieves
+significantly better performance compared to the baselines. When
+using MLP and GBDT as detectors, the accuracy reaches 99.1% and
+98.3%, respectively. Moreover, when the OOV problem is present,
+the performance of detectors trained on feature vectors generated
+
+_ a nm oa 7. ~~ 4 fe 7
+
+EE EE EEE EEE
+
+Case Study: Detecting Unseen Attacks
+
+erform a case study in wild to inspect whether the proposed
+1ique can be generalized over previously unseen attacks and
+> accurate predictions. In detail, we consider the unseen at-
+through exploiting CVE-2021-44228. This Log4j vulnerability
+Jiscovered in the Log4j logging library, which has severe and
+spread impacts. Malicious actors can use the Log4j flaw to run
+st any code they want on vulnerable systems.
+
+==================== CHUNK SEPARATOR ====================
+
+lowing the previous setup, our training set contains 5,000
+mn events, and after excluding the Log4j attack, the training set
+des 3,681 adversary events. After that, we randomly extract 500
+rsary events from Log4j attack as the testing set. We plot a ROC
+iver operating characteristic) curve to graphically illustrate
+erformance of this APT detector. We also include 500 benign
+ts in this new testing set because the ROC curve is the plot of
+rue positive rate (TPR) against the false positive rate (FPR) at
+ing threshold setting.
+
+ill, we adopt the semi-supervised algorithm XGBOD [35] to de-
+
+,dxrorenr« avante launrphod hc thal ancl attarl Thea DIY AL.
+
+Figure 6: The ROC Curve.
+
+==================== CHUNK SEPARATOR ====================
+
+,dxrorenr« avante launrphod hc thal ancl attarl Thea DIY AL.
+
+Figure 6: The ROC Curve.
+
+define execution partitions. PrioTracker [16] proposed priority-
+based causality tracking using rareness score and fanout score as
+indications of unusualness. Bates et al. [1] proposed Linux Prove-
+nance Modules (LPM), a kernel-based framework and data loss pre-
+vention system for sensitive data. PalanTir [33] uses a processor
+tracing (PT) hardware technique to enable finer-grained instruction
+level tracking. Kairos [2] proposed a graph neural network-based
+encoder and decoder to learn the temporal evolution of the prove-
+nance graph’s structural changes. ProvDetector [29] is the closest
+related method to the one proposed in this paper. For a causal path
+consisting of multiple events, ProvDetector uses the PV-DM model
+of Doc2Vec [12] to learn an embedding. The shortcomings of this
+approach are evident: first, the semantics it can capture are shallow.
+However, our method leverages the extensive knowledge of LLMs
+to enrich the semantics of event descriptions. Secondly, ProvDe-
+tector cannot well address the OOV (out-of-vocabulary) challenge.
+
+Dyirrv annrynanh ann tha athaoar hand danae nat fara thic teciwa
+
+6 Discussion and Future Work
+
+==================== CHUNK SEPARATOR ====================
+
+Dyirrv annrynanh ann tha athaoar hand danae nat fara thic teciwa
+
+6 Discussion and Future Work
+
+Generality of Sysdig: As a widely used security event tracing
+system, Sysdig event format is well-known to multiple widely used
+LLMs. For instance, as well as OpenAl’s models, open-source LLMs,
+Meta’s LLAMA models, also recognize the sysdig format. The ad-
+vantage of this event format to LLMs is mainly the clarity of the
+system event details broken down into clear key-value pairs. Al-
+ternatively, for LLMs without the knowledge of Sysdig, the same
+details of system call event information can be formulated as a
+prompt.
+
+Usage of OpenAI LLM Models: At the time of our experiment,
+OpenAI GPT-4o0 has the best performance as an industry-leading
+product. Also, the text embedding models of OpenAI are competi-
+tive. Therefore, we chose OpenAl’s models for our evaluation.
+
+However, we note the proposed method is agnostic to LLM mod-
+els and is also applicable to other LLM models as well. Other open-
+source or commercial LLM models such as Meta’s LLAMA, Mi-
+crosoft Copilot, and Google Gemini can be utilized for the same
+
+NnITnHoOce
+
+learning-based detectors. Not only that, even in the semi-supervised
+learning scenario, our anomaly detection can still achieve a preci-
+sion as high as 96.9%. This result demonstrates the usefulness of
+the LLMs for APT detection with regard to the richness of semantic
+information.
+
+Acknowledgments
+
+==================== CHUNK SEPARATOR ====================
+
+Acknowledgments
+
+Sandia National Laboratories is a multimission laboratory managed
+and operated by National Technology and Engineering Solutions
+of Sandia, LLC., a wholly owned subsidiary of Honeywell Interna-
+tional, Inc., for the U.S. Department of Energy’s National Nuclear
+Security Administration under contract DE-NA0003525. This article
+describes objective technical results and analysis. Any subjective
+views or opinions that might be expressed in the article do not
+necessarily represent the views of the U.S. Department of Energy or
+the United States Government. This work was supported through
+contract CR-100043-23-51577 with the U.S. Department of Energy.
+
+References
+
+[1] Adam Bates, Dave Tian, Kevin R. B. Butler, and Thomas Moyer. 2015. Trust-
+worthy whole-system provenance for the Linux kernel. In 24th USENIX Security
+
+alarms. But Holmes involves many empirical parameters, which
+leads to unstable detection results.
+
+5.3 LLMs for Cybersecurity
+
+==================== CHUNK SEPARATOR ====================
+
+5.3 LLMs for Cybersecurity
+
+Existing work largely employs the GPT family of LLMs to address
+different security challenges. For instance, previous works [24, 34]
+investigated the capabilities of ChatGPT in detecting vulnerabilities
+and resolving bugs. In particular, Qu et al. [24] found the debug
+performance can be remarkably improved after taking advantage of
+contextual information. Furthermore, Yan et al. [32] took advantage
+of GPT-4 to generate descriptive texts for each API call. Based
+on this, they developed a BERT-based dynamic malware analysis
+technique. Lastly, the knowledge of LLMs was also applied to detect
+DDoS attacks [6, 14]. To the best of our knowledge, we are the first
+to propose a technique that leverages the extensive knowledge of
+LLMs to assist in provenance analysis for APT detection.
+
+6 Discussion and Future Work
+
+Generality of Sysdig: As a widely used security event tracing
+system, Sysdig e event format is well-known to multiple widely used
+
+TYRA. TT... og. ad ny a
+
+expertness of different LLM models.
+
+7 Conclusion
+
+In this paper, we explored a novel APT detection method that offers
+a significantly improved detection performance by utilizing LLMs
+to augment the semantics of provenance analysis events.
+
+==================== CHUNK SEPARATOR ====================
+
+We found the state-of-the-art LLM offers multiple enhancements
+over provenance event details. Specifically, our analysis summarizes
+LLM can offer knowledge on system calls, knowledge on software
+identity, high-level knowledge on application execution context,
+and comments on possible suspiciousness beyond a brief description
+of a system call. Such new details empower the semantic details
+thus improving the performance of NLP-based detection methods.
+
+Our experiment shows that text embedding on the augmented
+LLM description significantly improves the performance over the
+representative method adopted by a previous work in supervised
+learning-based detectors. Not only that, even in the semi-supervised
+learning scenario, our anomaly detection can still achieve a preci-
+sion as high as 96.9%. This result demonstrates the usefulness of
+the LLMs for APT detection with regard to the richness of semantic
+information.
+
+Sysdig Inc. 2024. Sysdig Monitor. https://docs.sysdig.com/en/docs/sysdig-
+monitor/. Accessed: 2024-12.
+
+Samuel T King and Peter M Chen. 2003. Backtracking intrusions. In Proceedings
+of the 19th ACM symposium on Operating systems principles. 223-236.
+
+Quoc Le and Tomas Mikolov. 2014. Distributed representations of sentences and
+documents. In International conference on machine learning. 1188-1196.
+
+==================== CHUNK SEPARATOR ====================
+
+Quoc Le and Tomas Mikolov. 2014. Distributed representations of sentences and
+documents. In International conference on machine learning. 1188-1196.
+
+Kyu Hyung Lee, X. Zhang, and Dongyan Xu. 2013. High accuracy attack prove-
+nance via binary-based execution partition. In Network and Distributed System
+Security Symposium (NDSS).
+
+Qingyang Li, Yihang Zhang, Zhidong Jia, Yannan Hu, Lei Zhang, Jianrong Zhang,
+Yongming Xu, Yong Cui, Zongming Guo, and Xinggong Zhang. 2024. DoLLM:
+How large language models understanding network flow data to detect carpet
+bombing DDoS. arXiv preprint arXiv:2405.07638 (2024).
+
+[35]
+
+Yue Zhao and Maciej K Hryniewicki. 2018. XGBOD: Improving supervise
+detection with unsupervised representation learning. In 2018 Internatior
+Conference on Neural Networks (IJCNN). IEEE, 1-8.
+
+Yue Zhao, Zain Nasrullah, and Zheng Li. 2019. PyOD: A python tool
+scalable outlier detection. Journal of machine learning research 20, 96 (201
+Fei Zuo and Junghwan Rhee. 2024. Vulnerability discovery based on sou1
+patch commit mining: a systematic literature review. International Jo
+Information Security 23, 2 (2024), 1513-1526.
+
+==================== CHUNK SEPARATOR ====================
+
+Fei Zuo, Xin Zhang, Yuqi Song, Junghwan Rhee, and Jicheng Fu. 2023. |
+message can help: security patch detection in open source software vi
+former. In 2023 IEEE/ACIS 21st International Conference on Software Eng
+Research, Management and Applications (SERA). 345-351.
+
+1, Juan Zhai, Fei Wang, Kyu Hyung Lee, Xiangyu Zhang, and Dong
+MPI: Multiple perspective attack investigation with semantic av
+partitioning. In 26th USENIX Security Symposium. 1111-1128.
+
+a, X. Zhang, and Dongyan Xu. 2016. ProTracer: Towards pract
+e tracing by alternating between logging and tainting. In Network
+| System Security Symposium (NDSS).
+
+<olov, Ilya Sutskever, Kai Chen, Greg S Corrado, and Jeff Dean. 2
+d representations of words and phrases and their compositiona
+n neural information processing systems 26 (2013).
+
+Milajerdi, Rigel Gjomemo, Birhanu Eshete, Ramachandran Sekar,
+
+akrishnan. 2019. Holmes: real-time apt detection through correla
+us information flows. In IEEE Symposium on Security and Privacy

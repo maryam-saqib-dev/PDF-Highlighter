@@ -1,0 +1,513 @@
+--- PARSED CHUNKS FROM: sample_demo_file_Extracted.pdf (Layout-Aware OCR) ---
+
+59-year-old female with history of hypothyroidism, insomnia, anxiety presenting for medication review and
+refills. Patient takes 25 mg of trazodone for sleep nightly, hopes to wean off this. Feels her mood overall is st
+on current medication regimen.
+
+Of note, patient had a hospitalization in April 2024 for bilateral frontoparietal craniotomies for chronic subc
+hematomas. This was found on MRI of brain following a head trauma 2 months prior, Patient had been havi
+extreme headaches and dizziness, During this time patient was also placed on Keppra for seizure prophylaxi:
+well as amlodipine for high blood pressure, she is off both of these now. Patient has residual hand weakness
+continues to work with occupational therapy. She is back to regular exercise however still cannot hold weigh
+hold a tennis racquet due to her weakness.
+
+Dr, Alexander Neurological Associates.
+
+{30/2024 Lauren Bra
+
+eason for Appointment
+
+l. Pt transfer
+
+2. Med refills
+
+listory of Present Illness
+Depression Screening:
+
+« PHQ-9
+
+Little interest or pleasure in doing things Not at all
+
+Feeling down, depressed, or hopeless Not at all
+
+Trouble falling or staying asleep, or sleeping too much Not at all
+
+Feeling tired or having little energy Not at all
+
+Poor appetite or overeating Not at all
+
+==================== CHUNK SEPARATOR ====================
+
+Feeling tired or having little energy Not at all
+
+Poor appetite or overeating Not at all
+
+Feeling bad about yourself or that you are a failure, or have let yourself or your family down Not at all
+Trouble concentrating on things, such as reading the newspaper or watching television Not at all
+Moving or speaking so slowly that other people could have noticed; or the opposite, being so fidgety or rest
+that you have been moving around a lot more than usual Not at all
+
+Thoughts that you would be better off dead or of hurting yourself in some way Not at all
+
+Total Score o
+
+History:
+
+59-year-old female with history of hypothyroidism, insomnia, anxiety presenting for medication review and
+refills. Patient takes 25 mg of trazodone for sleep nightly, hopes to wean off this. Feels her mood overall is sta
+on current medication regimen.
+
+Of note, patient had a hospitalization in April 2024 for bilateral frontoparietal craniotomies for chronic subd
+hematomas. This was found on MRI of brain following a head trauma 2 months prior, Patient had been havi
+extreme headaches and dizziness, During this time patient was also placed on Keppra for seizure prophylaxis
+well as amlodipine for high blood pressure, she is off both of these now. Patient has residual hand weakness <
+continues to work with occupational therapy. She is back to regular exercise however still cannot hold weight
+hold a tennis racquet due to her weakness.
+
+Dr, Alexander Neurological Associates.
+
+urrent Medications
+Taking
+
+==================== CHUNK SEPARATOR ====================
+
+Dr, Alexander Neurological Associates.
+
+urrent Medications
+Taking
+
+»_ = 8 *
+
+Flonase 50 MCG/ACT Suspension 2 sprays in each nostril Nasally Once a day
+
+Mucinex 600 MG Tablet Extended Release 12 Hour 1 tablet as needed Orally every 12 hrs
+
+Hair Skin Nafls « Capsule as directed Orally
+
+traZODone HCl so MG Tablet 1 tablet at bedtime as needed Orally Once a day. Notes to Pharmacist: 1/2 tab
+
+DULoxetine HCl 60 MG Capsule Delayed Release Particles take ene capsule by mouth one time daily Orally Onee a day , Notes to
+Pharmacist: LAST FILL KEEP UPCOMING APPT
+
+Synthroid 112 MOG Tablet 1 tablet Orally Once a day, Notes to Pharmacist: BRAND ONLY!
+
+lization in April 2024 for bilateral frontoparietal craniotomies for chronic sul
+mn MRI of brain following a head trauma 2 months prior, Patient had been ha
+1ess, During this time patient was also placed on Keppra for seizure prophyla:
+lood pressure, she is off both of these now. Patient has residual hand weaknes
+ational therapy. She is back to regular exercise however still cannot hold weis
+
+CV%
+
+Locyte
+
+233
+(Ref
+Range:
+130-400
+K/ul)
+12.8
+(Ref
+Range:
+UL5-14.5
+%)
+
+91.6
+
+(Ref
+Range;
+80.0-99.0
+fL)
+
+29.8
+(Ref
+Range:
+26.0~34.0
+pg)
+
+32.6
+(Ref
+Range:
+$1.0°35,0
+g/dL}
+30.2
+(Ref
+Range:
+174-517
+%)
+
+233
+(Ref
+Range:
+130-400
+K/uL)
+
+42,7
+(Ref
+Range:
+11.5°14.5
+%)
+
+91.7
+
+(Ref
+Range:
+80,0-99.0
+fL)
+
+31.2
+(Ref
+Range:
+26.0-34.0
+Pg)
+
+34.0
+
+(Ref
+Range:
+$21.0-35.0
+g/dL)
+31.5
+
+(Ref
+Range:
+17.4°51.7
+%)
+
+229
+(Ref
+Range:
+130-400
+K/uL)
+
+12.9
+(Ref
+Range:
+11.5-14.5
+%)
+
+==================== CHUNK SEPARATOR ====================
+
+34.0
+
+(Ref
+Range:
+$21.0-35.0
+g/dL)
+31.5
+
+(Ref
+Range:
+17.4°51.7
+%)
+
+229
+(Ref
+Range:
+130-400
+K/uL)
+
+12.9
+(Ref
+Range:
+11.5-14.5
+%)
+
+93.0
+
+{Ref
+Range:
+80.0+99,0
+fL)
+
+30.7
+(Ref
+Range:
+26.0-34.0
+Pg)
+
+33.0
+(Ref
+Range:
+31,0°35.0
+g/dL)
+37.5
+
+(Ref
+Range:
+17.4-51.7
+%)
+
+219
+(Ref
+Range:
+130-400
+K/ul)
+
+12.5
+(Ref
+Range:
+11.5-14.5
+%)
+
+94.4
+
+(Ref
+Range:
+80.0°99.0
+fL)
+
+31.6
+
+(Ref
+Range:
+26.0-34.0
+pg)
+
+33.5
+
+(Ref
+Range:
+31,0-35.0
+g/dL)
+38.4
+(Ref
+Range:
+47.4°5147
+%)
+
+240
+(Ref
+Range:
+130-400
+K/ul)
+
+13.8
+(Ref
+Range:
+11,5°14.5
+%)
+
+93.1
+
+(Ref
+Range:
+80.0-99.0
+{1}
+
+B11
+(Ref
+Range:
+26,0340
+pg)
+
+33.4
+
+(Ref
+Range:
+31.0+35.0
+g/dL)
+
+29.0
+
+. (Ref
+
+Range:
+U7.An51.7
+%)
+
+(Ref (Ref (Ref (Ref (Ref
+Range: Range: Range: Range: Range:
+35.0-47.0 35.0-47.0 35.0°47.0 35.0°47.0 35,0-47.0
+%) %) %)} %) %)
+
+233 233 229 219 240
+(Ref (Ref (Ref (Ref (Ref
+Range: Range: Range: Range: Range:
+130-400 180-400 180-400 130-400 130-400
+K/ul) K/uL) K/uL) K/uL)} K/ul)
+12,8 12.7 12.7 12,5 13.8
+
+ST nt TR nt #7 2L H.f TO ak
+
+noglobin 12.5 12.4 12.7 1.9 13.0
+(Ref (Ref (Ref {Ref (Ref
+Range: Range: Range: Range: Range:
+11.9-16.0 11.9-16.0 11.5-16.0 11.9-16.0 11.5-16.0
+g/dl) g/dl) g/dl) g/dl) —s_ g/dL)
+
+natocrit 38.4 36.5 38.5 35.5 38.9
+(Ref (Ref (Ref (Ref (Ref
+Range: Range: Range: Range: Range:
+
+35.0-47.0 35.0-47.0 35.0-47.0 35.0°47.0 35,0-47.0
+%) %) %) %) %)
+
+elet 233 233 229 219 240
+
+nt (Ref (Ref (Ref (Ref (Ref
+
+Range: Range: Range: Range: Range:
+130-400 180-400 130-400 1390-400 130-400
+K/ul) K/ul) K/uL) K/uL) K/ul)
+
+==================== CHUNK SEPARATOR ====================
+
+nt (Ref (Ref (Ref (Ref (Ref
+
+Range: Range: Range: Range: Range:
+130-400 180-400 130-400 1390-400 130-400
+K/ul) K/ul) K/uL) K/uL) K/ul)
+
+N-CV% 12,8 12.7 12.7 12,5 13.8
+(Ref (Ref (Ref {Ref (Ref
+Range: Range: Range: Range: Range:
+W5-14.5 W515 U5-14.5 t5-14.5  11.5-14.5
+%) %) %} %) %)
+
+V 91.6 91.7 93.0 94.4 93.1
+(Ref (Ref {Ref (Ref (Ref
+Ranga: Ranecs Range: Rane: Range:
+
+BANGKe, Wanee. RANE INMTIReS =| ANRC,
+80.0-99.0 80,0-99.0 80.0+99,0 80.0°99.0 80.0-99.0
+fL) fL) fL) fL) fL}
+
+ 
+
+29.8 31.2 30.7 31.6 31.1
+(Ref (Ref (Ref (Ref (Ref
+Range: Range: Range: Range: Range:
+26.0-34.0 26.0-34.0 26.0-34.0 26.0-34.0 26,0-34.0
+pg) Pg) pg) pg) pg)
+
+32.6 34.0 33.0 33.5 33-4
+(Ref (Ref (Ref (Ref (Ref
+Range: Range: Range: Range: Range:
+1.0°35,0 31,0-35.0 31,0-35.0 31,0-35.0 31.0-35.0
+
+WR
+
+OCOD OO:
+
+04/03/24 1553 AP.GILRI
+04/03/24 1553 AP.GILRI
+04/03/24 1553 AP.GILRI
+
+04/04/24 0001 interface
+04/04/24 0001 interface
+04/04/24 0611 interface
+04/04/24 0616 interface
+
+ 
+
+Order ENTER in POM
+Ordering Doctor: Gilliam,Richard R NP
+Order Source: EPOM
+
+ 
+
+rd d
+ce’d doctors edited in LAB
+order’s status changed from TRANS to LOGGED t
+order’s status changed from LOGGED to IN PRO
+order's status changed from IN PRO to COMP by
+
+04/03/24 1553 AP.GILRI Order ENTER in POM
+04/03/24 1553 AP.GILRI Ordering Doctor: Gilliam,Richard R NP
+04/03/24 1553 AP.GILRI Order $ - EPOM
+
+ 
+
+ 
+
+04/03/24 1623 3BAZ0038 order acknowledged
+
+04/04/24 0001 interface cc'd doctors edited in LAB
+
+==================== CHUNK SEPARATOR ====================
+
+04/03/24 1623 3BAZ0038 order acknowledged
+
+04/04/24 0001 interface cc'd doctors edited in LAB
+
+04/04/24 0001 interface order’s status changed from TRANS to LOGGED by LAB
+04/04/24 0611 interface order’s status changed from LOGGED to IN PRO by LAT
+04/04/24 0634 interface order's status changed from IN PRO to COMP by LAB
+
+04/04/24 0925 DR.WILDA4 Order ENTER in POM
+
+04/04/24 0925 DR.WILDA4 Order from set: PACU Adult
+
+04/04/24 0925 DR.WILDA4 Ordering Doctor: Williams.David G.A. MD
+04/04/24 0925 DR.WILDA4 Order Source: EPOM
+4/04/24 0925 erfa
+04/04/24 1313 3NNI9254
+04/06/24 1652 DR.KOHJA1 Ord
+
+Bwrr
+
+  
+   
+
+   
+   
+   
+
+  
+    
+
+  
+
+10 04/06/24 2055 PWSNS10 Order RECEIVE in NUR
+11 = 04/06/24 2055 PWSNS10 Ordering Doctor: Kohout,Jaromir MD
+12. 04/06/24 2055 PWSNS10 Order Source: EPOM
+
+13 04/06/24 2055 PWSNS10 Order continued upon patient transfer.
+14 = 04/06/24 2058 PWSNS10 order acknowledged
+
+04/04/24 0925 DR.WILDA4 Order ENTER in POM
+
+04/04/24 0925 DR.WILDA4 Order from set: PACU Adult
+
+04/04/24 0925 DR.WILDA4 Ordering Doctor: Williams,David G.A. MD
+04/04/24 0925 DR.WILDA4 Order Source: EPOM
+
+Bonmr
+
+ge
+interface order's status change
+
+04/04/24 1313 3NNI9254 order acknowledged
+6/24 1652 1) der marked
+
+ 
+
+10 04/06/24 2055 PWSNS10 Order RECEIVE in NUR
+
+11 04/06/24 2055 PWSNS10 Ordering Doctor: Kohout. Jaromir MD
+12. 04/06/24 2055 PWSNS10 Order Source: EPOM
+
+13 04/06/24 2055 PWSNS10 Order continued upon patient transfer.
+
+tivity Date: 04/03/24 Time: 2000
+
+==================== CHUNK SEPARATOR ====================
+
+13 04/06/24 2055 PWSNS10 Order continued upon patient transfer.
+
+tivity Date: 04/03/24 Time: 2000
+
+1430 Teach/Educate +
+Jocument 04/03/24 2000 ON 04/03/24 2327 OW
+- - PATIENT/FAMILY TEACHING - -
+mary learner: Patient
+mary learners preferred spoken language: ENG ENGLISH
+inary learners preferred written language: ENG ENGLISH
+Siological topics: Blood pressure
+ictional topics: Activity care
+chological topics: Neurological system care
+Coping support
+ith behavior topics: Medication actions
+
+ve anfle’ nehopeatad. Datscankt

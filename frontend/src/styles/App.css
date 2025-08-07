@@ -1,0 +1,155 @@
+/* General App Layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 16px;
+}
+
+.title {
+  color: #111827;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtitle {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.controls-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Form Elements */
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.button {
+  padding: 12px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Status and Answer Boxes */
+.status-message {
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.success-message {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.info-message {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.answer-section {
+  margin-top: 10px;
+}
+
+.answer-box {
+  margin-top: 10px;
+  padding: 16px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* PDF Viewer */
+.document-viewer {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-top: 20px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
