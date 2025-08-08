@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
+import './styles/App.css'; // This line imports the CSS and makes the styles work
 
 // --- PDF.js Worker Setup ---
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -12,16 +13,24 @@ const API_URL = 'http://127.0.0.1:8001';
 
 // --- Main App Component ---
 function App() {
+  // State for file handling
   const [file, setFile] = useState(null);
   const [fileUrl, setFileUrl] = useState('');
   const [processedFilename, setProcessedFilename] = useState('');
   const [numPages, setNumPages] = useState(null);
+
+  // State for Q&A
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
+  
+  // State for UI feedback
   const [isLoadingUpload, setIsLoadingUpload] = useState(false);
   const [isLoadingAsk, setIsLoadingAsk] = useState(false);
   const [status, setStatus] = useState({ message: '', type: 'info' });
+  const [progress, setProgress] = useState(0); // State for progress bar
+  const progressInterval = useRef(null); // Ref to hold the interval ID
 
+  // Handler for file input changes
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
     if (selectedFile && selectedFile.type === "application/pdf") {
@@ -29,6 +38,7 @@ function App() {
       setFileUrl(URL.createObjectURL(selectedFile));
       setProcessedFilename('');
       setAnswer('');
+      setProgress(0);
       setStatus({ message: `Selected file: ${selectedFile.name}`, type: 'info' });
     } else {
       setFile(null);
@@ -37,6 +47,7 @@ function App() {
     }
   };
 
+  // Handler for uploading and processing the file
   const handleUpload = async () => {
     if (!file) {
       setStatus({ message: 'Please select a file first.', type: 'error' });
@@ -44,7 +55,19 @@ function App() {
     }
     setIsLoadingUpload(true);
     setAnswer('');
-    setStatus({ message: 'Uploading and processing... This may take a moment.', type: 'info' });
+    setStatus({ message: 'Uploading and processing...', type: 'info' });
+    setProgress(0);
+
+    // Simulate progress
+    progressInterval.current = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 95) {
+          clearInterval(progressInterval.current);
+          return 95; // Stop just before 100
+        }
+        return prev + 5;
+      });
+    }, 1500); // Increment progress every 1.5 seconds
 
     const formData = new FormData();
     formData.append('file', file);
@@ -54,13 +77,27 @@ function App() {
       setProcessedFilename(response.data.filename);
       setStatus({ message: response.data.message, type: 'success' });
     } catch (err) {
-      const errorMessage = err.response?.data?.detail || 'An unexpected upload error occurred.';
+      // FIXED: Added robust error message parsing to handle complex error objects
+      let errorMessage = 'An unexpected upload error occurred.';
+      if (err.response && err.response.data && err.response.data.detail) {
+        const detail = err.response.data.detail;
+        if (Array.isArray(detail)) {
+          errorMessage = detail.map((d) => d.msg).join(', ');
+        } else if (typeof detail === 'string') {
+          errorMessage = detail;
+        } else {
+          errorMessage = JSON.stringify(detail);
+        }
+      }
       setStatus({ message: errorMessage, type: 'error' });
     } finally {
+      clearInterval(progressInterval.current); // Ensure interval is cleared
+      setProgress(100); // Finish progress
       setIsLoadingUpload(false);
     }
   };
 
+  // Handler for asking a question
   const handleAsk = async () => {
     if (isLoadingAsk || !processedFilename || !question) return;
 
@@ -76,9 +113,8 @@ function App() {
       const response = await axios.post(`${API_URL}/ask/`, formData);
       const { answer, highlighted_pdf_url } = response.data;
       
-      setAnswer(answer); // Always display the conversational answer
+      setAnswer(answer); 
 
-      // If highlighting was successful, update the PDF viewer
       if (highlighted_pdf_url) {
         setFileUrl(API_URL + highlighted_pdf_url);
         setStatus({ message: 'Answer found and highlighted!', type: 'success' });
@@ -107,6 +143,19 @@ function App() {
           <div className="section">
             <h2>1. Upload Document</h2>
             <input type="file" accept=".pdf" onChange={handleFileChange} className="input" />
+            
+            {/* Progress Bar */}
+            {isLoadingUpload && (
+              <div className="progress-bar-container">
+                <div 
+                  className="progress-bar" 
+                  style={{ width: `${progress}%` }}
+                >
+                  {progress > 0 && `${progress}%`}
+                </div>
+              </div>
+            )}
+
             <button 
               type="button"
               onClick={handleUpload} 
@@ -125,13 +174,13 @@ function App() {
               onChange={(e) => setQuestion(e.target.value)}
               placeholder="e.g., What is the main conclusion?"
               className="input"
-              disabled={!processedFilename}
+              disabled={!processedFilename || isLoadingUpload}
               onKeyPress={(e) => { if (e.key === 'Enter') handleAsk(); }}
             />
             <button 
               type="button"
               onClick={handleAsk} 
-              disabled={isLoadingAsk || !processedFilename || !question} 
+              disabled={isLoadingAsk || !processedFilename || !question || isLoadingUpload} 
               className="button"
             >
               {isLoadingAsk ? 'Asking...' : 'Find & Highlight'}
