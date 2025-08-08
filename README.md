@@ -10,7 +10,7 @@ This project is an intelligent web application that allows users to upload scann
 The application is built with a modern tech stack:
 
 - **Backend**: FastAPI (Python)  
-- **Frontend**: React (Vite)  
+- **Frontend**: React 
 - **OCR Engine**: `ocrmypdf` with the Tesseract engine  
 - **AI/RAG Pipeline**: Langchain with Google Gemini and a FAISS vector store  
 
