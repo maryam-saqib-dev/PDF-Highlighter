@@ -85,9 +85,10 @@ def create_ocr_layered_pdf(original_path: str, processed_path: str) -> str:
             # Safe parameters that work across versions:
             rotate_pages=True,
             remove_vectors=False,
+            oversample=300,
             # For difficult text:
             tesseract_timeout=180,
-            tesseract_oem=3,  # LSTM + Legacy engine
+            tesseract_oem=1,  # LSTM + Legacy engine
             tesseract_config=[
                 'preserve_interword_spaces=1',
                 'tessedit_char_whitelist=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?()[]{}<>:;-/\\@#$%^&*_+=|"\''
