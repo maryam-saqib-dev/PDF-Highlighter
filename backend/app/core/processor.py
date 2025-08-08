@@ -41,7 +41,7 @@ os.makedirs(RAW_OCR_DIRECTORY, exist_ok=True)
 # FIXED: Reverted to loading the API key securely from the environment
 embeddings = GoogleGenerativeAIEmbeddings(
     model="models/embedding-001",
-    google_api_key="AIzaSyCcqq7F_Pv2hixPqtqp-mbBX9NSiF0Y3_g",
+    google_api_key = os.environ.get('GEMINI_API_KEY')
     task_type="RETRIEVAL_DOCUMENT"
 )
 
@@ -138,7 +138,7 @@ async def query_rag_pipeline(filename: str, question: str) -> dict | None:
     # FIXED: Reverted to loading the API key securely from the environment
     llm = ChatGoogleGenerativeAI(
         model="gemini-1.5-flash",
-        google_api_key="AIzaSyCcqq7F_Pv2hixPqtqp-mbBX9NSiF0Y3_g",
+        google_api_key = os.environ.get('GEMINI_API_KEY')
         temperature=0.5, 
     )
     

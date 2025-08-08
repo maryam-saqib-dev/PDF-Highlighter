@@ -202,3 +202,5 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.tomlbackend/app/models/
 backend/app/models/
+
+env
