@@ -27,8 +27,6 @@ function App() {
   const [isLoadingUpload, setIsLoadingUpload] = useState(false);
   const [isLoadingAsk, setIsLoadingAsk] = useState(false);
   const [status, setStatus] = useState({ message: '', type: 'info' });
-  const [progress, setProgress] = useState(0); // State for progress bar
-  const progressInterval = useRef(null); // Ref to hold the interval ID
 
   // Handler for file input changes
   const handleFileChange = (event) => {
@@ -38,7 +36,6 @@ function App() {
       setFileUrl(URL.createObjectURL(selectedFile));
       setProcessedFilename('');
       setAnswer('');
-      setProgress(0);
       setStatus({ message: `Selected file: ${selectedFile.name}`, type: 'info' });
     } else {
       setFile(null);
@@ -55,19 +52,8 @@ function App() {
     }
     setIsLoadingUpload(true);
     setAnswer('');
-    setStatus({ message: 'Uploading and processing...', type: 'info' });
-    setProgress(0);
-
-    // Simulate progress
-    progressInterval.current = setInterval(() => {
-      setProgress(prev => {
-        if (prev >= 95) {
-          clearInterval(progressInterval.current);
-          return 95; // Stop just before 100
-        }
-        return prev + 5;
-      });
-    }, 1500); // Increment progress every 1.5 seconds
+    // Set the processing message
+    setStatus({ message: 'Uploading and processing... This may take a moment.', type: 'info' });
 
     const formData = new FormData();
     formData.append('file', file);
@@ -75,9 +61,10 @@ function App() {
     try {
       const response = await axios.post(`${API_URL}/upload/`, formData);
       setProcessedFilename(response.data.filename);
+      // Set the success message
       setStatus({ message: response.data.message, type: 'success' });
     } catch (err) {
-      // FIXED: Added robust error message parsing to handle complex error objects
+      // Handle errors
       let errorMessage = 'An unexpected upload error occurred.';
       if (err.response && err.response.data && err.response.data.detail) {
         const detail = err.response.data.detail;
@@ -91,8 +78,6 @@ function App() {
       }
       setStatus({ message: errorMessage, type: 'error' });
     } finally {
-      clearInterval(progressInterval.current); // Ensure interval is cleared
-      setProgress(100); // Finish progress
       setIsLoadingUpload(false);
     }
   };
@@ -129,6 +114,7 @@ function App() {
       setIsLoadingAsk(false);
     }
   };
+  
 
   return (
     <div className="container">
@@ -144,18 +130,6 @@ function App() {
             <h2>1. Upload Document</h2>
             <input type="file" accept=".pdf" onChange={handleFileChange} className="input" />
             
-            {/* Progress Bar */}
-            {isLoadingUpload && (
-              <div className="progress-bar-container">
-                <div 
-                  className="progress-bar" 
-                  style={{ width: `${progress}%` }}
-                >
-                  {progress > 0 && `${progress}%`}
-                </div>
-              </div>
-            )}
-
             <button 
               type="button"
               onClick={handleUpload} 
