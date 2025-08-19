@@ -2,11 +2,11 @@ import os
 import fitz  # PyMuPDF
 from dotenv import load_dotenv
 import ocrmypdf
-import pytesseract
-from PIL import Image
-import io
-import numpy as np
-import layoutparser as lp
+# import pytesseract
+# from PIL import Image
+# import io
+# import numpy as np
+# import layoutparser as lp
 from thefuzz import fuzz
 import asyncio
 import re
@@ -50,17 +50,17 @@ os.makedirs(LAYOUTPARSER_TEXT_DIRECTORY, exist_ok=True)
 # --- Initialize Models ---
 embeddings = GoogleGenerativeAIEmbeddings(
     model="models/embedding-001",
-    google_api_key=os.environ.get("GEMINI_API_KEY"),
+    google_api_key=os.getenv("GOOGLE_API_KEY"),
     task_type="RETRIEVAL_DOCUMENT"
 )
 
-# Initialize LayoutParser model for debugging comparison
-layout_model = lp.Detectron2LayoutModel(
-    config_path=os.path.join(MODELS_DIRECTORY, 'config.yml'),
-    model_path=os.path.join(MODELS_DIRECTORY, 'model_final.pth'),
-    label_map={0: "Text", 1: "Title", 2: "List", 3: "Table", 4: "Figure"},
-    extra_config=["MODEL.ROI_HEADS.SCORE_THRESH_TEST", 0.8]
-)
+# # Initialize LayoutParser model for debugging comparison
+# layout_model = lp.Detectron2LayoutModel(
+#     config_path=os.path.join(MODELS_DIRECTORY, 'config.yml'),
+#     model_path=os.path.join(MODELS_DIRECTORY, 'model_final.pth'),
+#     label_map={0: "Text", 1: "Title", 2: "List", 3: "Table", 4: "Figure"},
+#     extra_config=["MODEL.ROI_HEADS.SCORE_THRESH_TEST", 0.8]
+# )
 
 # --- Helper Functions ---
 
@@ -103,27 +103,27 @@ def create_ocr_layered_pdf(original_path: str, processed_path: str) -> str:
         print(f"OCR processing failed: {str(e)}")
         raise RuntimeError(f"Failed to process PDF: {str(e)}")
 
-def debug_save_layoutparser_ocr_text(file_contents: bytes, filename: str):
-    """Perform OCR with LayoutParser for debugging."""
-    print(f"Starting LayoutParser OCR debug for '{filename}'...")
-    try:
-        doc = fitz.open(stream=file_contents, filetype="pdf")
-        full_text = ""
-        for page in doc:
-            pix = page.get_pixmap(dpi=300)
-            image = np.array(Image.open(io.BytesIO(pix.tobytes("png"))))
-            layout = layout_model.detect(image)
-            text_blocks = lp.Layout([b for b in layout if b.type in ['Text', 'Title', 'List']])
-            for block in text_blocks:
-                segment_image = block.pad(left=5, right=5, top=5, bottom=5).crop_image(image)
-                full_text += pytesseract.image_to_string(Image.fromarray(segment_image), lang='eng') + "\n"
+# def debug_save_layoutparser_ocr_text(file_contents: bytes, filename: str):
+#     """Perform OCR with LayoutParser for debugging."""
+#     print(f"Starting LayoutParser OCR debug for '{filename}'...")
+#     try:
+#         doc = fitz.open(stream=file_contents, filetype="pdf")
+#         full_text = ""
+#         for page in doc:
+#             pix = page.get_pixmap(dpi=300)
+#             image = np.array(Image.open(io.BytesIO(pix.tobytes("png"))))
+#             layout = layout_model.detect(image)
+#             text_blocks = lp.Layout([b for b in layout if b.type in ['Text', 'Title', 'List']])
+#             for block in text_blocks:
+#                 segment_image = block.pad(left=5, right=5, top=5, bottom=5).crop_image(image)
+#                 full_text += pytesseract.image_to_string(Image.fromarray(segment_image), lang='eng') + "\n"
         
-        output_path = os.path.join(LAYOUTPARSER_TEXT_DIRECTORY, f"layoutparser_text_{filename.replace('.pdf', '.txt')}")
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(clean_text(full_text))
-        print(f"Saved LayoutParser OCR text to: {output_path}")
-    except Exception as e:
-        print(f"Error in LayoutParser debug: {str(e)}")
+#         output_path = os.path.join(LAYOUTPARSER_TEXT_DIRECTORY, f"layoutparser_text_{filename.replace('.pdf', '.txt')}")
+#         with open(output_path, 'w', encoding='utf-8') as f:
+#             f.write(clean_text(full_text))
+#         print(f"Saved LayoutParser OCR text to: {output_path}")
+#     except Exception as e:
+#         print(f"Error in LayoutParser debug: {str(e)}")
 
 # --- MAIN PROCESSING FUNCTIONS ---
 
@@ -184,8 +184,8 @@ async def query_rag_pipeline(filename: str, question: str) -> Optional[Dict[str,
 
     # Initialize LLM with optimized settings
     llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
-        google_api_key=os.environ.get("GEMINI_API_KEY"),
+        model="gemini-2.5-flash",
+        google_api_key=os.getenv("GOOGLE_API_KEY"),
         temperature=0.3,
         max_output_tokens=1000
     )
