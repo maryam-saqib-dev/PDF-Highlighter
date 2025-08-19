@@ -12,9 +12,11 @@ load_dotenv()
 app = FastAPI(title="PDF Highlighter Backend")
 
 # --- CORS Configuration ---
-# This is still useful for local development with `npm start`
+# MODIFIED: Changed origins to a wildcard to allow the live frontend to connect.
+# For a production application with stricter security, you would replace "*"
+# with the specific URL of your deployed frontend.
 origins = [
-    "http://localhost:3000",
+    "*"
 ]
 
 app.add_middleware(
@@ -26,23 +28,16 @@ app.add_middleware(
 )
 
 # --- API Router ---
-# We add a prefix to all API routes to distinguish them from frontend routes.
-# All your endpoints (/upload, /ask, etc.) will now be under /api
+# The /api prefix is correctly configured here.
 app.include_router(endpoints.router, prefix="/api")
 
 
 # --- Static Files Mount ---
-# This is the crucial part. It tells FastAPI to serve the static files
-# (HTML, CSS, JS) from your React app's 'build' directory.
-
-# Construct the path to the frontend build directory
-# Assumes the backend is in 'PDF-Highlighter/backend' and frontend is in 'PDF-Highlighter/frontend'
+# This configuration is designed to serve the frontend and backend from the same server.
+# This will work on Render if you deploy as a single Web Service.
 frontend_build_path = os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "build")
 
-# Check if the directory exists before mounting
 if os.path.exists(frontend_build_path):
-    # The `html=True` argument ensures index.html is served for any path not
-    # found, which is essential for single-page applications like React.
     app.mount("/", StaticFiles(directory=frontend_build_path, html=True), name="static")
 else:
     print(f"Warning: Frontend build directory not found at '{frontend_build_path}'. Static file serving is disabled.")
