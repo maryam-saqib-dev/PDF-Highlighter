@@ -3,7 +3,7 @@ services:
   - type: web
     name: pdf-highlighter-backend
     env: docker
-    repo: https://github.com/YOUR_USERNAME/YOUR_REPO_NAME # Replace with your repo URL
+    repo: https://github.com/abdullah-dev07/PDF-Highlighter # Replace with your repo URL
     dockerfilePath: ./backend/Dockerfile
     envVars:
       - key: GOOGLE_API_KEY
@@ -17,7 +17,7 @@ services:
   # Frontend Service (React Static Site)
   - type: static
     name: pdf-highlighter-frontend
-    repo: https://github.com/YOUR_USERNAME/YOUR_REPO_NAME # Replace with your repo URL
+    repo: https://github.com/abdullah-dev07/PDF-Highlighter # Replace with your repo URL
     rootDir: ./frontend
     buildCommand: npm install && npm run build
     publishDir: dist
