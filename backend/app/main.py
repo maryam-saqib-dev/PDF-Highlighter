@@ -16,9 +16,9 @@ app = FastAPI(title="PDF Highlighter Backend")
 # For a production application with stricter security, you would replace "*"
 # with the specific URL of your deployed frontend.
 origins = [
-    "*"
+    "http://localhost:3000", # For local development
+    "https://pdf-highlighter-00.onrender.com", # Replace with your actual frontend URL
 ]
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
