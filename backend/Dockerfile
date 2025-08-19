@@ -25,14 +25,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy and install Python requirements
-COPY requirements.txt .
-RUN python --version
+COPY backend/requirements.txt .
 
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the backend application code
-COPY ./app ./app
+# Copy the backend application code into the container
+COPY backend/app ./app
 
 # Expose the port the app will run on
 EXPOSE 8001

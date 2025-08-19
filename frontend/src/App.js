@@ -9,10 +9,9 @@ import './styles/App.css';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 // --- Configuration ---
-// By using a relative path, this will work for both development and production.
-// In development, the "proxy" in package.json will forward these requests.
-// In production, the requests will go to the same server that served the app.
-const API_URL = '/api'; 
+// MODIFIED: Use an environment variable for the API URL for deployment flexibility.
+// This will use the VITE_API_URL when deployed on Render, but fall back to localhost for local development.
+const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8001'; 
 
 // --- Main App Component ---
 function App() {
@@ -40,7 +39,8 @@ function App() {
 
     const interval = setInterval(async () => {
       try {
-        const response = await axios.get(`${API_URL}/status/${taskId}`);
+        // The endpoint path must now include /api
+        const response = await axios.get(`${API_URL}/api/status/${taskId}`);
         const { status: taskStatus, filename } = response.data;
 
         if (taskStatus === 'completed') {
@@ -96,7 +96,8 @@ function App() {
     formData.append('file', file);
 
     try {
-      const response = await axios.post(`${API_URL}/upload/`, formData);
+      // The endpoint path must now include /api
+      const response = await axios.post(`${API_URL}/api/upload/`, formData);
       setTaskId(response.data.task_id);
     } catch (err) {
       let errorMessage = 'An unexpected upload error occurred.';
@@ -121,14 +122,15 @@ function App() {
     formData.append('question', question);
 
     try {
-      const response = await axios.post(`${API_URL}/ask/`, formData);
+      // The endpoint path must now include /api
+      const response = await axios.post(`${API_URL}/api/ask/`, formData);
       const { answer, highlighted_pdf_url } = response.data;
       
       setAnswer(answer); 
 
       if (highlighted_pdf_url) {
-        // The URL is already a correct relative path, so we can use it directly
-        setFileUrl(highlighted_pdf_url);
+        // The URL from the backend already includes /api, so we just need the base URL
+        setFileUrl(API_URL + highlighted_pdf_url);
         setStatus({ message: 'Answer found and highlighted!', type: 'success' });
       } else {
         setStatus({ message: 'Answer found (highlighting not possible for this quote).', type: 'info' });
