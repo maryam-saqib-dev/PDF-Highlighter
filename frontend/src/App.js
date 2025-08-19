@@ -1,15 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-import './styles/App.css'; // This line imports the CSS and makes the styles work
+import './styles/App.css'; 
 
 // --- PDF.js Worker Setup ---
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 // --- Configuration ---
-const API_URL = 'http://127.0.0.1:8001'; 
+// By using a relative path, this will work for both development and production.
+// In development, the "proxy" in package.json will forward these requests.
+// In production, the requests will go to the same server that served the app.
+const API_URL = '/api'; 
 
 // --- Main App Component ---
 function App() {
@@ -27,6 +30,41 @@ function App() {
   const [isLoadingUpload, setIsLoadingUpload] = useState(false);
   const [isLoadingAsk, setIsLoadingAsk] = useState(false);
   const [status, setStatus] = useState({ message: '', type: 'info' });
+
+  // State for polling
+  const [taskId, setTaskId] = useState(null);
+
+  // --- Effect for Polling Task Status ---
+  useEffect(() => {
+    if (!taskId) return;
+
+    const interval = setInterval(async () => {
+      try {
+        const response = await axios.get(`${API_URL}/status/${taskId}`);
+        const { status: taskStatus, filename } = response.data;
+
+        if (taskStatus === 'completed') {
+          clearInterval(interval);
+          setTaskId(null);
+          setIsLoadingUpload(false);
+          setProcessedFilename(filename);
+          setStatus({ message: 'Processing complete! You can now ask questions.', type: 'success' });
+        } else if (taskStatus === 'failed') {
+          clearInterval(interval);
+          setTaskId(null);
+          setIsLoadingUpload(false);
+          setStatus({ message: 'Processing failed. Please try another file.', type: 'error' });
+        }
+      } catch (error) {
+        clearInterval(interval);
+        setTaskId(null);
+        setIsLoadingUpload(false);
+        setStatus({ message: 'An error occurred while checking the processing status.', type: 'error' });
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [taskId]);
 
   // Handler for file input changes
   const handleFileChange = (event) => {
@@ -52,7 +90,6 @@ function App() {
     }
     setIsLoadingUpload(true);
     setAnswer('');
-    // Set the processing message
     setStatus({ message: 'Uploading and processing... This may take a moment.', type: 'info' });
 
     const formData = new FormData();
@@ -60,24 +97,13 @@ function App() {
 
     try {
       const response = await axios.post(`${API_URL}/upload/`, formData);
-      setProcessedFilename(response.data.filename);
-      // Set the success message
-      setStatus({ message: response.data.message, type: 'success' });
+      setTaskId(response.data.task_id);
     } catch (err) {
-      // Handle errors
       let errorMessage = 'An unexpected upload error occurred.';
-      if (err.response && err.response.data && err.response.data.detail) {
-        const detail = err.response.data.detail;
-        if (Array.isArray(detail)) {
-          errorMessage = detail.map((d) => d.msg).join(', ');
-        } else if (typeof detail === 'string') {
-          errorMessage = detail;
-        } else {
-          errorMessage = JSON.stringify(detail);
-        }
+      if (err.response?.data?.detail) {
+        errorMessage = err.response.data.detail;
       }
       setStatus({ message: errorMessage, type: 'error' });
-    } finally {
       setIsLoadingUpload(false);
     }
   };
@@ -101,7 +127,8 @@ function App() {
       setAnswer(answer); 
 
       if (highlighted_pdf_url) {
-        setFileUrl(API_URL + highlighted_pdf_url);
+        // The URL is already a correct relative path, so we can use it directly
+        setFileUrl(highlighted_pdf_url);
         setStatus({ message: 'Answer found and highlighted!', type: 'success' });
       } else {
         setStatus({ message: 'Answer found (highlighting not possible for this quote).', type: 'info' });
@@ -114,7 +141,8 @@ function App() {
       setIsLoadingAsk(false);
     }
   };
-  
+
+  const isProcessing = isLoadingUpload || taskId !== null;
 
   return (
     <div className="container">
@@ -128,15 +156,15 @@ function App() {
         <div className="controls-column">
           <div className="section">
             <h2>1. Upload Document</h2>
-            <input type="file" accept=".pdf" onChange={handleFileChange} className="input" />
+            <input type="file" accept=".pdf" onChange={handleFileChange} className="input" disabled={isProcessing} />
             
             <button 
               type="button"
               onClick={handleUpload} 
-              disabled={isLoadingUpload || !file} 
+              disabled={isProcessing || !file} 
               className="button"
             >
-              {isLoadingUpload ? 'Processing...' : 'Upload & Process'}
+              {isProcessing ? 'Processing...' : 'Upload & Process'}
             </button>
           </div>
 
@@ -148,13 +176,13 @@ function App() {
               onChange={(e) => setQuestion(e.target.value)}
               placeholder="e.g., What is the main conclusion?"
               className="input"
-              disabled={!processedFilename || isLoadingUpload}
+              disabled={!processedFilename || isProcessing}
               onKeyPress={(e) => { if (e.key === 'Enter') handleAsk(); }}
             />
             <button 
               type="button"
               onClick={handleAsk} 
-              disabled={isLoadingAsk || !processedFilename || !question || isLoadingUpload} 
+              disabled={isLoadingAsk || !processedFilename || !question || isProcessing} 
               className="button"
             >
               {isLoadingAsk ? 'Asking...' : 'Find & Highlight'}
