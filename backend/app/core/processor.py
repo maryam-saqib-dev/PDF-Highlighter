@@ -1,6 +1,5 @@
 import os
 import fitz  # PyMuPDF
-from dotenv import load_dotenv
 from thefuzz import fuzz
 import asyncio
 import re
@@ -21,7 +20,7 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
 # --- Initialization & Config ---
-load_dotenv()
+# No longer using dotenv; Render handles environment variables directly.
 GOOGLE_PROJECT_ID = os.getenv("GOOGLE_PROJECT_ID")
 GOOGLE_PROCESSOR_ID = os.getenv("GOOGLE_PROCESSOR_ID")
 GOOGLE_PROCESSOR_LOCATION = os.getenv("GOOGLE_PROCESSOR_LOCATION")
@@ -53,8 +52,13 @@ def _get_text_from_anchor(text_anchor, full_text: str) -> str:
 def run_document_ai_ocr(file_contents: bytes):
     if not all([GOOGLE_PROJECT_ID, GOOGLE_PROCESSOR_ID, GOOGLE_PROCESSOR_LOCATION]):
         raise ValueError("Google Cloud credentials for Document AI are not set.")
+    
+    # Use ClientOptions to set the API endpoint based on location
     opts = ClientOptions(api_endpoint=f"{GOOGLE_PROCESSOR_LOCATION}-documentai.googleapis.com")
+    
+    # The client will automatically find the credentials from GOOGLE_APPLICATION_CREDENTIALS
     client = documentai.DocumentProcessorServiceClient(client_options=opts)
+    
     name = client.processor_path(GOOGLE_PROJECT_ID, GOOGLE_PROCESSOR_LOCATION, GOOGLE_PROCESSOR_ID)
     raw_document = documentai.RawDocument(content=file_contents, mime_type="application/pdf")
     request = documentai.ProcessRequest(name=name, raw_document=raw_document)
@@ -202,8 +206,7 @@ def create_highlighted_pdf(original_filename: str, text_to_highlight: str) -> Op
         for word_info in words_to_highlight:
             rect = fitz.Rect(word_info[:4])
             highlight = page_to_highlight.add_highlight_annot(rect)
-            # --- FIX: Changed highlight color to a lighter red ---
-            highlight.set_colors(stroke=(1, 0.6, 0.6)) # RGB for a lighter red/pink
+            highlight.set_colors(stroke=(1, 0.6, 0.6))
             highlight.update()
         
         print(f"Found and highlighted best match with score: {best_overall_score}")
