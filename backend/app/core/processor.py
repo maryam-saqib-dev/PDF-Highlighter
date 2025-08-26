@@ -122,7 +122,7 @@ async def query_rag_pipeline(filename: str, question: str) -> Optional[Dict[str,
     context_docs = await retriever.ainvoke(question)
     context_text = "\n---\n".join([clean_text(doc.page_content) for doc in context_docs])
 
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.1)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.1)
     
     prompt_template = """
     Based ONLY on the provided context, perform the following two steps:
