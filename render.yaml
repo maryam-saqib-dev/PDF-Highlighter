@@ -8,8 +8,8 @@ services:
       - key: GOOGLE_APPLICATION_CREDENTIALS
         value: /etc/secrets/gcp.json  # tell SDK where to find the key
     secretFiles:
-      - name: gcp.json   # this should match the name of the secret file you uploaded in Render
-        path: /etc/secrets/gcp.json
+      - name: gcp_key.json   # this should match the name of the secret file you uploaded in Render
+        path: /etc/secrets/gcp_key.json
     healthCheckPath: /
     disk:
       name: data-disk
