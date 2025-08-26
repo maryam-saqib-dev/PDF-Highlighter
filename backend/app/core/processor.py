@@ -95,6 +95,8 @@ def reconstruct_searchable_pdf(file_contents: bytes, google_doc, output_path: st
     print(f"Successfully reconstructed searchable PDF at: {output_path}")
 
 def process_and_embed_pdf(file_contents: bytes, filename: str):
+
+    print(f"google api key is {os.getenv('GOOGLE_API_KEY')}")
     original_pdf_path = os.path.join(UPLOAD_DIRECTORY, filename)
     with open(original_pdf_path, "wb") as f:
         f.write(file_contents)
