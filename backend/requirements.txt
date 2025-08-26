@@ -36,3 +36,4 @@ langchain-core==0.3.72
 python-multipart==0.0.20
 faiss-cpu
 google-cloud-documentai
+sentence-transformers
