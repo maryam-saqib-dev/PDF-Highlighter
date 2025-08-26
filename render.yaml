@@ -1,26 +1,17 @@
 services:
-  # Backend Service (FastAPI)
   - type: web
     name: pdf-highlighter-backend
     env: docker
-    repo: https://github.com/abdullah-dev07/PDF-Highlighter # Replace with your repo URL
+    repo: https://github.com/abdullah-dev07/PDF-Highlighter
     dockerfilePath: ./backend/Dockerfile
     envVars:
-      - key: GOOGLE_API_KEY
-        sync: false # Keep your API key secret
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        value: /etc/secrets/gcp.json  # tell SDK where to find the key
+    secretFiles:
+      - name: gcp.json   # this should match the name of the secret file you uploaded in Render
+        path: /etc/secrets/gcp.json
     healthCheckPath: /
     disk:
       name: data-disk
       mountPath: /app/data
       sizeGB: 1
-
-  # Frontend Service (React Static Site)
-  - type: static
-    name: pdf-highlighter-frontend
-    repo: https://github.com/abdullah-dev07/PDF-Highlighter # Replace with your repo URL
-    rootDir: ./frontend
-    buildCommand: npm install && npm run build
-    publishDir: dist
-    envVars:
-      - key: VITE_API_URL
-        value: https://pdf-highlighter-backend.onrender.com # This will be your backend's live URL
